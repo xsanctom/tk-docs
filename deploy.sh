@@ -19,21 +19,33 @@ if [ ! -d "dist" ]; then
   exit 1
 fi
 
+# Copy dist to temporary location (we'll lose it when switching branches)
+echo "Backing up build files..."
+TEMP_DIR=$(mktemp -d)
+cp -r dist/* "$TEMP_DIR/" 2>/dev/null || true
+find dist -mindepth 1 -maxdepth 1 -name '.*' -exec cp -r {} "$TEMP_DIR/" \; 2>/dev/null || true
+
 # Create or checkout gh-pages branch
 echo "Preparing gh-pages branch..."
 if git show-ref --verify --quiet refs/heads/gh-pages; then
   git checkout gh-pages
+  # Remove all tracked files
   git rm -rf . --quiet 2>/dev/null || true
+  # Remove any remaining files except .git
+  find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} + 2>/dev/null || true
 else
   git checkout --orphan gh-pages
+  # Remove all files except .git
+  find . -mindepth 1 -maxdepth 1 ! -name '.git' -exec rm -rf {} + 2>/dev/null || true
 fi
 
-# Copy dist contents to root (including hidden files)
-cp -r dist/* .
-cp -r dist/.* . 2>/dev/null || true
+# Copy dist contents from temp to root
+echo "Copying build files to gh-pages branch..."
+cp -r "$TEMP_DIR"/* . 2>/dev/null || true
+find "$TEMP_DIR" -mindepth 1 -maxdepth 1 -name '.*' -exec cp -r {} . \; 2>/dev/null || true
 
-# Remove dist directory if it was copied
-rm -rf dist
+# Clean up temp directory
+rm -rf "$TEMP_DIR"
 
 # Add all files
 git add .
