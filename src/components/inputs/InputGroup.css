@@ -1,0 +1,101 @@
+/* InputGroup Component Styles */
+
+.input-group {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  
+  /* Constraints */
+  width: 100%;
+}
+
+/* Label Group - contains label and optional indicator */
+.input-group-label-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+}
+
+.input-group-label {
+  /* Typography */
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text);
+  
+  /* Layout */
+  margin: 0;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.input-group-optional {
+  /* Typography */
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-subtle);
+  
+  /* Layout */
+  margin: 0;
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+/* Sublabel */
+.input-group-sublabel {
+  /* Typography */
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-subtle);
+  
+  /* Layout */
+  margin: 0;
+  width: 100%;
+}
+
+/* Input Wrapper - contains input and error message */
+.input-group-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+/* Error Message */
+.input-group-error {
+  /* Typography */
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--danger-text);
+  
+  /* Layout */
+  margin: 0;
+  width: 100%;
+}
+
+/* Helper Text */
+.input-group-helper {
+  /* Typography */
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-subtle);
+  
+  /* Layout */
+  margin: 0;
+  width: 100%;
+}
+
+

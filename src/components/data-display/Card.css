@@ -1,0 +1,155 @@
+/* Card Component Styles */
+
+.card {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+  
+  /* Visual - Default */
+  background-color: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  
+  /* Typography */
+  font-family: 'IBM Plex Sans', sans-serif;
+  
+  /* Interaction */
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, border-width 0.2s ease;
+  
+  /* Remove default button styling if used as button */
+  outline: none;
+  text-align: left;
+}
+
+/* Card Content Container */
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* Card Header - Title and Badge */
+.card-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+/* Card Icon */
+.card-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+}
+
+/* Card Title */
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+}
+
+/* Card Badge - removed, using Badge component instead */
+
+/* Card Description */
+.card-description {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-subtle);
+  margin: 0 !important;
+  margin-top: 0 !important;
+  padding: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Ensure no margin on p tag inside card-description */
+.card-description p,
+.card-content p {
+  margin: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* Card without description - reduce gap */
+.card-content-no-description {
+  gap: 0;
+}
+
+/* Hover State */
+.card:hover:not(:disabled):not(.card-disabled):not(.card-selected) {
+  background-color: var(--surface-raised-hover);
+}
+
+/* Focus State */
+.card:focus-visible,
+.card-focused {
+  background-color: var(--surface);
+  border: 2px solid var(--focus);
+  outline: none;
+}
+
+/* Selected State */
+.card-selected {
+  background-color: var(--purple-surface-selected);
+  border: 1px solid var(--purple-purple-600);
+}
+
+.card-selected:hover {
+  background-color: var(--purple-surface-selected);
+}
+
+/* Disabled State */
+.card:disabled,
+.card-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.card-disabled .card-icon {
+  color: var(--text-disabled);
+}
+
+.card-disabled .card-title {
+  color: var(--text-disabled);
+}
+
+.card-disabled .card-description {
+  color: var(--text-disabled);
+}
+
+/* Card as Button */
+.card[role="button"] {
+  cursor: pointer;
+}
+
+.card[role="button"]:hover:not(:disabled):not(.card-disabled):not(.card-selected) {
+  background-color: var(--surface-raised-hover);
+}
+
+/* Card as Link */
+.card[role="link"] {
+  cursor: pointer;
+  text-decoration: none;
+}
+

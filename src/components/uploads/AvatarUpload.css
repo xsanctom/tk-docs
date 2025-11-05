@@ -1,0 +1,189 @@
+/* AvatarUpload Component Styles */
+
+.avatar-upload-wrapper {
+  /* Layout */
+  display: inline-block;
+  
+  /* Visual */
+  position: relative;
+}
+
+.avatar-upload-container {
+  /* Layout */
+  position: relative;
+  width: 64px;
+  height: 64px;
+  
+  /* Visual */
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid var(--border);
+  transition: all 0.2s ease;
+  background-color: var(--surface-low);
+  
+  /* Flexbox for content */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-upload-container:hover:not(.disabled) {
+  border-color: var(--border-active);
+}
+
+.avatar-upload-container.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Size Variants */
+.avatar-upload-container.size-md {
+  width: 64px;
+  height: 64px;
+}
+
+.avatar-upload-container.size-lg {
+  width: 96px;
+  height: 96px;
+}
+
+.avatar-upload-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.avatar-upload-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.avatar-upload-placeholder {
+  /* Layout */
+  width: 100%;
+  height: 100%;
+  
+  /* Visual */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Typography */
+  color: var(--text-subtle);
+}
+
+.avatar-upload-placeholder svg {
+  width: 50%;
+  height: 50%;
+}
+
+/* Edit overlay - shows on hover */
+.avatar-upload-edit-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.avatar-upload-container:hover:not(.disabled) .avatar-upload-edit-overlay {
+  opacity: 1;
+}
+
+.avatar-upload-edit-icon {
+  color: white;
+  width: 24px;
+  height: 24px;
+}
+
+/* Size-specific edit icon sizes */
+.avatar-upload-container.size-md .avatar-upload-edit-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.avatar-upload-container.size-lg .avatar-upload-edit-icon {
+  width: 28px;
+  height: 28px;
+}
+
+/* Remove button */
+.avatar-upload-remove-button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 10;
+  
+  /* Layout */
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Visual */
+  background-color: var(--danger-surface);
+  border: 1px solid var(--danger-border);
+  border-radius: 4px;
+  color: var(--danger-text);
+  cursor: pointer;
+  
+  /* Interaction */
+  transition: all 0.2s ease;
+  
+  /* Remove default styling */
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.avatar-upload-remove-button:hover {
+  background-color: var(--danger-surface-hover);
+  border-color: var(--danger-border);
+}
+
+.avatar-upload-remove-button:focus {
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.avatar-upload-remove-button:active {
+  background-color: var(--danger-surface);
+  transform: scale(0.95);
+}
+
+/* Size-specific remove button sizes */
+.avatar-upload-container.size-md .avatar-upload-remove-button {
+  width: 24px;
+  height: 24px;
+}
+
+.avatar-upload-container.size-lg .avatar-upload-remove-button {
+  width: 32px;
+  height: 32px;
+}
+
+.avatar-upload-container.size-md .avatar-upload-remove-button svg {
+  width: 12px;
+  height: 12px;
+}
+
+.avatar-upload-container.size-lg .avatar-upload-remove-button svg {
+  width: 16px;
+  height: 16px;
+}
+

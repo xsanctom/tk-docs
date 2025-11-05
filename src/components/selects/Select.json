@@ -1,0 +1,112 @@
+{
+  "component": "Select",
+  "description": "A single-select dropdown component with size variants, searchable option, and keyboard navigation support.",
+  "variants": ["mini", "sm", "md", "lg"],
+  "layout": {
+    "type": "auto-layout",
+    "direction": "vertical",
+    "alignment": {
+      "self": "stretch",
+      "children": "stretch"
+    },
+    "padding": {
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "gap": 4
+  },
+  "constraints": {
+    "horizontal": "left",
+    "vertical": "top",
+    "width": {
+      "mode": "fill-container",
+      "min": null,
+      "max": null,
+      "value": null
+    },
+    "height": {
+      "mode": "hug-contents",
+      "min": null,
+      "max": null,
+      "value": null
+    }
+  },
+  "overflow": {
+    "horizontal": "visible",
+    "vertical": "visible",
+    "clipping": false
+  },
+  "text": {
+    "truncation": "ellipsis",
+    "whiteSpace": "nowrap",
+    "maxLines": 1,
+    "overflowWrap": "normal"
+  },
+  "sizes": {
+    "mini": {
+      "height": 32,
+      "padding": "6px 12px",
+      "fontSize": 14
+    },
+    "sm": {
+      "height": 36,
+      "padding": "7px 12px",
+      "fontSize": 14
+    },
+    "md": {
+      "height": 40,
+      "padding": "8px 12px",
+      "fontSize": 14
+    },
+    "lg": {
+      "height": 48,
+      "padding": "10px 12px",
+      "fontSize": 14
+    }
+  },
+  "children": [
+    {
+      "name": "select-button",
+      "type": "button",
+      "constraints": {
+        "horizontal": "left",
+        "vertical": "top"
+      },
+      "width": {
+        "mode": "fill-container",
+        "min": null,
+        "max": null
+      },
+      "height": {
+        "mode": "fixed",
+        "value": null
+      },
+      "flex": {
+        "grow": 0,
+        "shrink": 0,
+        "minWidth": 0
+      }
+    },
+    {
+      "name": "select-dropdown",
+      "type": "dropdown",
+      "constraints": {
+        "horizontal": "left",
+        "vertical": "top"
+      },
+      "width": {
+        "mode": "fill-container",
+        "min": null,
+        "max": null
+      },
+      "height": {
+        "mode": "hug-contents",
+        "min": null,
+        "max": 260
+      }
+    }
+  ]
+}
+

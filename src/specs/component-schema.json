@@ -1,0 +1,48 @@
+{
+  "component": "Template",
+  "variants": [],
+  "layout": {
+    "type": "auto-layout",
+    "direction": "horizontal",
+    "alignment": {
+      "self": "stretch",
+      "children": "center"
+    },
+    "padding": {
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "gap": 0
+  },
+  "constraints": {
+    "horizontal": "left",
+    "vertical": "top",
+    "width": {
+      "mode": "hug-contents",
+      "min": null,
+      "max": null,
+      "value": null
+    },
+    "height": {
+      "mode": "hug-contents",
+      "min": null,
+      "max": null,
+      "value": null
+    }
+  },
+  "overflow": {
+    "horizontal": "visible",
+    "vertical": "visible",
+    "clipping": false
+  },
+  "text": {
+    "truncation": "none",
+    "whiteSpace": "normal",
+    "maxLines": null,
+    "overflowWrap": "normal"
+  },
+  "children": []
+}
+

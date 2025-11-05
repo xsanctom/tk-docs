@@ -1,0 +1,195 @@
+/* ButtonGroup Component Styles */
+
+.button-group {
+  /* Layout */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0; /* No gap - buttons are flush */
+  padding: 0;
+  
+  /* Visual */
+  background-color: var(--surface);
+  /* NO container border - buttons handle their own borders */
+  border-radius: 4px;
+  overflow: hidden; /* Clip border radius on container */
+  
+  /* Ensure container is clearly visible as single unit */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.button-group-button {
+  /* Layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  min-height: 36px;
+  height: 36px;
+  box-sizing: border-box; /* Ensure consistent sizing */
+  
+  /* Visual */
+  background: none;
+  border-radius: 0; /* No border radius - flush with neighbors */
+  color: var(--text-subtle);
+  
+  /* Each button has border on top, bottom, and right - always present */
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-left: 1px solid transparent; /* Always present but transparent when not first/active */
+  
+  /* Overlap borders with previous button using negative margin */
+  margin-left: -1px;
+  
+  /* Interaction - only transition colors, not borders or layout */
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  
+  /* Overflow */
+  overflow: visible;
+  
+  /* Text handling */
+  white-space: nowrap;
+  position: relative;
+}
+
+/* First button - no negative margin, gets left border */
+.button-group-button:first-child {
+  margin-left: 0;
+  border-left: 1px solid var(--border);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/* Last button gets border-radius on right */
+.button-group-button:last-child {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.button-group-button:hover:not(:disabled):not(.active) {
+  background-color: var(--surface-hover);
+  color: var(--text);
+}
+
+.button-group-button.active {
+  background-color: var(--purple-surface);
+  color: var(--purple-text);
+  /* Full purple border on all sides - always present, just change color */
+  border-top-color: var(--purple-border);
+  border-bottom-color: var(--purple-border);
+  border-right-color: var(--purple-border);
+  border-left-color: var(--purple-border);
+  /* Ensure selected border is always on top */
+  z-index: 10;
+  /* Negative margin to overlap and hide previous button's right border */
+  margin-left: -1px;
+  /* Ensure left border covers previous button's right border */
+  position: relative;
+}
+
+/* First button selected - no negative margin needed */
+.button-group-button.active:first-child {
+  margin-left: 0;
+  border-left-color: var(--purple-border);
+}
+
+/* Button before selected button - make right border transparent so purple shows through */
+.button-group-button:not(.active):has(+ .button-group-button.active) {
+  border-right-color: transparent;
+}
+
+/* Button after selected button - make left border transparent to avoid double border */
+.button-group-button.active + .button-group-button {
+  border-left-color: transparent;
+}
+
+.button-group-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  color: var(--text-disabled);
+}
+
+.button-group-button.active:disabled {
+  background-color: var(--purple-surface);
+  color: var(--purple-text);
+  border-color: var(--purple-border);
+  opacity: 0.6;
+}
+
+.button-group-button:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: -2px; /* Inside container */
+  z-index: 20; /* Above selected button */
+}
+
+.button-group-button-icon {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.button-group-button-text {
+  /* Don't truncate - let text determine width or fill container */
+  white-space: nowrap;
+  overflow: visible;
+}
+
+/* ButtonGroup Variants */
+.button-group.segmented .button-group-button {
+  /* Hug content - buttons size to their text */
+  width: auto;
+  min-width: fit-content;
+}
+
+.button-group.full-width {
+  /* Full width variant - buttons stretch to fill container */
+  width: 100%;
+}
+
+.button-group.full-width .button-group-button {
+  flex: 1 1 0;
+  min-width: 0;
+  /* Text stays centered even when stretching */
+  justify-content: center;
+}
+
+.button-group.full-width .button-group-button-text {
+  /* Still no truncation, but text centered in stretched button */
+  text-align: center;
+}
+
+/* Size variants */
+.button-group.size-mini .button-group-button {
+  min-height: 32px;
+  height: 32px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.button-group.size-sm .button-group-button {
+  min-height: 36px;
+  height: 36px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.button-group.size-md .button-group-button {
+  min-height: 40px;
+  height: 40px;
+  padding: 10px 16px;
+  font-size: 14px;
+}
+
+.button-group.size-lg .button-group-button {
+  min-height: 48px;
+  height: 48px;
+  padding: 12px 24px;
+  font-size: 16px;
+}

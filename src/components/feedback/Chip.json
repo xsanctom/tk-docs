@@ -1,0 +1,126 @@
+{
+  "component": "Chip",
+  "description": "A chip component similar to buttons but simpler, with selected state styling like ButtonGroup. Used for filters, tags, and toggleable selections.",
+  "variants": {
+    "sizes": ["lg", "md", "sm"],
+    "variants": ["default", "primary"]
+  },
+  "layout": {
+    "type": "flex",
+    "direction": "row",
+    "alignment": "center",
+    "justify": "center",
+    "padding": {
+      "lg": "12px 20px",
+      "md": "10px 16px",
+      "sm": "8px 12px"
+    },
+    "gap": {
+      "lg": "8px",
+      "md": "6px",
+      "sm": "6px"
+    }
+  },
+  "constraints": {
+    "horizontal": "hug",
+    "vertical": "fixed",
+    "widthMode": "hug",
+    "heightMode": "fixed",
+    "heights": {
+      "lg": 48,
+      "md": 40,
+      "sm": 36
+    }
+  },
+  "visual": {
+    "backgroundColor": {
+      "default": "var(--surface)",
+      "selected": "var(--purple-purple-50)",
+      "selectedHover": "var(--purple-surface)",
+      "selectedDisabled": "var(--purple-purple-50)"
+    },
+    "borderRadius": "9999px",
+    "border": "1px solid",
+    "borderColors": {
+      "default": "var(--border)",
+      "selected": "var(--purple-border)",
+      "primary": "var(--info-border)",
+      "disabled": "var(--border)",
+      "selectedDisabled": "var(--purple-border)"
+    },
+    "textColors": {
+      "default": "var(--text-subtle)",
+      "selected": "var(--purple-text)",
+      "primary": "var(--info-text)",
+      "disabled": "var(--text-disabled)",
+      "selectedDisabled": "var(--purple-text)"
+    }
+  },
+  "text": {
+    "fontFamily": "'IBM Plex Sans', sans-serif",
+    "fontSizes": {
+      "lg": "14px",
+      "md": "12px",
+      "sm": "12px"
+    },
+    "fontWeight": {
+      "default": 400,
+      "selected": 500
+    },
+    "whiteSpace": "nowrap",
+    "truncation": false
+  },
+  "states": {
+    "default": {
+      "backgroundColor": "var(--surface)",
+      "borderColor": "var(--border)",
+      "textColor": "var(--text-subtle)",
+      "fontWeight": 400
+    },
+    "hover": {
+      "borderColor": "var(--border-active)",
+      "textColor": "var(--text)",
+      "note": "Only applies when not selected and not disabled"
+    },
+    "selected": {
+      "backgroundColor": "var(--purple-purple-50)",
+      "borderColor": "var(--purple-border)",
+      "textColor": "var(--purple-text)",
+      "fontWeight": 500
+    },
+    "selectedHover": {
+      "backgroundColor": "var(--purple-surface)",
+      "borderColor": "var(--purple-border)",
+      "textColor": "var(--purple-text)",
+      "fontWeight": 500
+    },
+    "selectedDisabled": {
+      "backgroundColor": "var(--purple-purple-50)",
+      "borderColor": "var(--purple-border)",
+      "textColor": "var(--purple-text)",
+      "fontWeight": 500,
+      "opacity": 0.6,
+      "note": "Selected state styling maintained with reduced opacity"
+    },
+    "primary": {
+      "borderColor": "var(--info-border)",
+      "textColor": "var(--info-text)",
+      "fontWeight": 500,
+      "note": "Cannot be combined with selected state"
+    },
+    "disabled": {
+      "borderColor": "var(--border)",
+      "textColor": "var(--text-disabled)",
+      "opacity": 0.6
+    }
+  },
+  "iconSupport": {
+    "leadingIcon": true,
+    "trailingIcon": true,
+    "iconSizes": {
+      "lg": "18px",
+      "md": "16px",
+      "sm": "14px"
+    }
+  }
+}
