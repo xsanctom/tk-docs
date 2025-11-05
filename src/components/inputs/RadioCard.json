@@ -1,0 +1,111 @@
+{
+  "component": "RadioCard",
+  "variants": [],
+  "layout": {
+    "type": "auto-layout",
+    "direction": "horizontal",
+    "alignment": {
+      "self": "stretch",
+      "children": "flex-start"
+    },
+    "padding": {
+      "top": 12,
+      "right": 12,
+      "bottom": 12,
+      "left": 12
+    },
+    "gap": 8
+  },
+  "constraints": {
+    "horizontal": "left",
+    "vertical": "top",
+    "width": {
+      "mode": "fill-container",
+      "min": null,
+      "max": null,
+      "value": null
+    },
+    "height": {
+      "mode": "hug-contents",
+      "min": null,
+      "max": null,
+      "value": null
+    }
+  },
+  "overflow": {
+    "horizontal": "visible",
+    "vertical": "visible",
+    "clipping": false
+  },
+  "text": {
+    "truncation": "none",
+    "whiteSpace": "normal",
+    "maxLines": null,
+    "overflowWrap": "normal"
+  },
+  "children": [
+    {
+      "name": "radio-input",
+      "type": "input",
+      "constraints": {
+        "horizontal": "left",
+        "vertical": "top"
+      },
+      "width": {
+        "mode": "fixed",
+        "value": 0
+      },
+      "height": {
+        "mode": "fixed",
+        "value": 0
+      },
+      "flex": {
+        "grow": 0,
+        "shrink": 0
+      },
+      "position": "absolute",
+      "opacity": 0
+    },
+    {
+      "name": "radio-content",
+      "type": "container",
+      "layout": {
+        "direction": "vertical",
+        "gap": 4
+      },
+      "constraints": {
+        "horizontal": "left",
+        "vertical": "top"
+      },
+      "width": {
+        "mode": "fill-container",
+        "min": null,
+        "max": null
+      },
+      "height": {
+        "mode": "hug-contents"
+      },
+      "flex": {
+        "grow": 1,
+        "shrink": 1,
+        "minWidth": 0
+      },
+      "children": [
+        {
+          "name": "radio-label",
+          "type": "text",
+          "fontSize": 14,
+          "fontWeight": 500
+        },
+        {
+          "name": "radio-description",
+          "type": "text",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "color": "subtle"
+        }
+      ]
+    }
+  ]
+}
+

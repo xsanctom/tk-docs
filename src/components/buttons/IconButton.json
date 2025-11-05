@@ -1,0 +1,131 @@
+{
+  "component": "IconButton",
+  "sizes": ["mini", "sm", "md", "lg"],
+  "layout": {
+    "type": "auto-layout",
+    "direction": "horizontal",
+    "alignment": {
+      "self": "stretch",
+      "children": "center"
+    },
+    "padding": {
+      "top": 8,
+      "right": 8,
+      "bottom": 8,
+      "left": 8
+    },
+    "gap": 0
+  },
+  "constraints": {
+    "horizontal": "center",
+    "vertical": "center",
+    "width": {
+      "mode": "fixed",
+      "min": null,
+      "max": null,
+      "value": 40
+    },
+    "height": {
+      "mode": "fixed",
+      "min": null,
+      "max": null,
+      "value": 40
+    }
+  },
+  "overflow": {
+    "horizontal": "visible",
+    "vertical": "visible",
+    "clipping": false
+  },
+  "text": {
+    "truncation": "none",
+    "whiteSpace": "normal",
+    "maxLines": null,
+    "overflowWrap": "normal"
+  },
+  "children": [
+    {
+      "element": "icon",
+      "constraints": {
+        "horizontal": "center",
+        "vertical": "center"
+      },
+      "flex": {
+        "grow": 0,
+        "shrink": 0,
+        "basis": "auto"
+      },
+      "width": {
+        "mode": "fixed",
+        "value": 16
+      },
+      "height": {
+        "mode": "fixed",
+        "value": 16
+      }
+    }
+  ],
+  "sizeVariants": {
+    "mini": {
+      "width": {
+        "value": 32
+      },
+      "height": {
+        "value": 32
+      },
+      "padding": {
+        "top": 6,
+        "right": 6,
+        "bottom": 6,
+        "left": 6
+      },
+      "iconSize": 12
+    },
+    "sm": {
+      "width": {
+        "value": 36
+      },
+      "height": {
+        "value": 36
+      },
+      "padding": {
+        "top": 6,
+        "right": 6,
+        "bottom": 6,
+        "left": 6
+      },
+      "iconSize": 14
+    },
+    "md": {
+      "width": {
+        "value": 40
+      },
+      "height": {
+        "value": 40
+      },
+      "padding": {
+        "top": 8,
+        "right": 8,
+        "bottom": 8,
+        "left": 8
+      },
+      "iconSize": 16
+    },
+    "lg": {
+      "width": {
+        "value": 48
+      },
+      "height": {
+        "value": 48
+      },
+      "padding": {
+        "top": 12,
+        "right": 12,
+        "bottom": 12,
+        "left": 12
+      },
+      "iconSize": 18
+    }
+  }
+}
+

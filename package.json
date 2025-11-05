@@ -1,20 +1,48 @@
 {
-  "name": "menu-clone",
-  "private": true,
+  "name": "@tablecheck/component-library",
   "version": "1.0.0",
+  "description": "Reusable component library with precise layout specifications",
   "type": "module",
+  "main": "./dist/component-library.cjs.js",
+  "module": "./dist/component-library.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/component-library.es.js",
+      "require": "./dist/component-library.cjs.js"
+    },
+    "./styles": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "build:pages": "vite build --mode pages",
+    "preview": "vite preview",
+    "deploy": "bash deploy.sh",
+    "deploy:gh-pages": "bash deploy.sh"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
+  "dependencies": {},
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.4",
-    "vite": "^5.4.11"
-  }
+    "vite": "^5.4.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "ui-library",
+    "design-system"
+  ],
+  "author": "",
+  "license": "ISC"
 }
 

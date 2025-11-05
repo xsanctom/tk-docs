@@ -1,0 +1,129 @@
+/* Tooltip Component Styles */
+
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  z-index: 1000;
+  display: inline-block;
+  padding: 6px 8px;
+  min-width: auto;
+  width: max-content;
+  max-width: 180px;
+  box-sizing: border-box;
+  
+  /* Visual */
+  background-color: var(--grey-grey-900);
+  color: var(--grey-white);
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  
+  /* Typography */
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  white-space: normal;
+  text-align: left;
+  word-break: normal;
+  overflow-wrap: break-word;
+  
+  /* Animation */
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease-out, visibility 0.15s ease-out;
+  visibility: hidden;
+}
+
+.tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* Top Position */
+.tooltip.position-top {
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Top Start */
+.tooltip.position-top-start {
+  bottom: calc(100% + 8px);
+  left: 0;
+}
+
+/* Top End */
+.tooltip.position-top-end {
+  bottom: calc(100% + 8px);
+  right: 0;
+}
+
+/* Bottom Position */
+.tooltip.position-bottom {
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Bottom Start */
+.tooltip.position-bottom-start {
+  top: calc(100% + 8px);
+  left: 0;
+}
+
+/* Bottom End */
+.tooltip.position-bottom-end {
+  top: calc(100% + 8px);
+  right: 0;
+}
+
+/* Left Position */
+.tooltip.position-left {
+  right: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Left Start */
+.tooltip.position-left-start {
+  right: calc(100% + 8px);
+  top: 0;
+}
+
+/* Left End */
+.tooltip.position-left-end {
+  right: calc(100% + 8px);
+  bottom: 0;
+}
+
+/* Right Position */
+.tooltip.position-right {
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Right Start */
+.tooltip.position-right-start {
+  left: calc(100% + 8px);
+  top: 0;
+}
+
+/* Right End */
+.tooltip.position-right-end {
+  left: calc(100% + 8px);
+  bottom: 0;
+}
+
+/* Content */
+.tooltip-content {
+  display: inline-block;
+  width: max-content;
+  max-width: 100%;
+}
+

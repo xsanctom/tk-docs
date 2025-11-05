@@ -1,0 +1,134 @@
+/* RadioCard Component Styles */
+
+.radio-card {
+  /* Layout */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 12px;
+  
+  /* Visual */
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--surface);
+  
+  /* Interaction */
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  /* Positioning */
+  position: relative;
+  
+  /* Overflow */
+  overflow: visible;
+}
+
+.radio-card-input {
+  /* Hide radio input visually but keep it accessible */
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+.radio-card-content {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.radio-card-label {
+  /* Typography */
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  
+  /* Text handling */
+  white-space: normal;
+  overflow-wrap: normal;
+  
+  /* Interaction */
+  cursor: pointer;
+  user-select: none;
+}
+
+.radio-card-description {
+  /* Typography */
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-subtle);
+  line-height: 1.4;
+  
+  /* Text handling */
+  white-space: normal;
+  overflow-wrap: normal;
+  
+  /* Interaction */
+  cursor: pointer;
+  user-select: none;
+}
+
+/* RadioCard States */
+.radio-card:hover:not(.disabled):not(.active) {
+  background-color: var(--surface-raised);
+}
+
+.radio-card.active {
+  background-color: var(--purple-surface);
+  border-color: var(--purple-border);
+}
+
+.radio-card:focus-within {
+  /* Focus state */
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Disabled State */
+.radio-card.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.radio-card.disabled .radio-card-label {
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+
+.radio-card.disabled .radio-card-description {
+  color: var(--text-disabled);
+  cursor: not-allowed;
+}
+
+/* RadioCardGroup Component Styles */
+
+.radio-card-group {
+  /* Layout */
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 8px;
+  
+  /* Visual */
+  padding: 0;
+  
+  /* Overflow */
+  overflow: visible;
+}
+
+.radio-card-group.vertical {
+  flex-direction: column;
+}
+
+.radio-card-group.vertical .radio-card {
+  width: 100%;
+}
+

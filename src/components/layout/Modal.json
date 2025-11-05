@@ -1,0 +1,200 @@
+{
+  "component": "Modal",
+  "description": "A flexible Modal/Dialog component with 4 size variants: fullscreen, item-editor (976px max-width), medium (600px max-width), and small (400px max-width). Includes overlay, header with close button, scrollable body, and optional footer.",
+  "variants": ["fullscreen", "item-editor", "medium", "small"],
+  "layout": {
+    "type": "auto-layout",
+    "direction": "vertical",
+    "alignment": {
+      "self": "stretch",
+      "children": "stretch"
+    },
+    "padding": {
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "gap": 0
+  },
+  "constraints": {
+    "horizontal": "center",
+    "vertical": "center",
+    "width": {
+      "mode": "fill-container",
+      "min": null,
+      "max": null,
+      "value": null
+    },
+    "height": {
+      "mode": "fill-container",
+      "min": null,
+      "max": null,
+      "value": null
+    }
+  },
+  "overflow": {
+    "horizontal": "hidden",
+    "vertical": "hidden",
+    "clipping": true
+  },
+  "text": {
+    "truncation": "none",
+    "whiteSpace": "normal",
+    "maxLines": null,
+    "overflowWrap": "normal"
+  },
+  "sizes": {
+    "fullscreen": {
+      "width": "100vw",
+      "height": "100vh",
+      "maxWidth": "none"
+    },
+    "item-editor": {
+      "width": "100%",
+      "maxWidth": "976px",
+      "height": "auto",
+      "minHeight": "400px"
+    },
+    "medium": {
+      "width": "100%",
+      "maxWidth": "600px",
+      "height": "auto",
+      "minHeight": "300px"
+    },
+    "small": {
+      "width": "100%",
+      "maxWidth": "400px",
+      "height": "auto",
+      "minHeight": "200px"
+    }
+  },
+  "children": [
+    {
+      "name": "overlay",
+      "type": "container",
+      "constraints": {
+        "horizontal": "stretch",
+        "vertical": "stretch"
+      },
+      "width": {
+        "mode": "fill-container",
+        "min": null,
+        "max": null
+      },
+      "height": {
+        "mode": "fill-container",
+        "min": null,
+        "max": null
+      }
+    },
+    {
+      "name": "modal-container",
+      "type": "container",
+      "constraints": {
+        "horizontal": "center",
+        "vertical": "center"
+      },
+      "width": {
+        "mode": "fill-container",
+        "min": null,
+        "max": null
+      },
+      "height": {
+        "mode": "hug-contents",
+        "min": null,
+        "max": null
+      }
+    },
+    {
+      "name": "header",
+      "type": "container",
+      "constraints": {
+        "horizontal": "stretch",
+        "vertical": "top"
+      },
+      "width": {
+        "mode": "fill-container",
+        "min": null,
+        "max": null
+      },
+      "height": {
+        "mode": "hug-contents",
+        "min": null,
+        "max": null
+      }
+    },
+    {
+      "name": "body",
+      "type": "container",
+      "constraints": {
+        "horizontal": "stretch",
+        "vertical": "top"
+      },
+      "width": {
+        "mode": "fill-container",
+        "min": null,
+        "max": null
+      },
+      "height": {
+        "mode": "fill-container",
+        "min": null,
+        "max": null
+      },
+      "flex": {
+        "grow": 1,
+        "shrink": 1,
+        "minWidth": 0
+      }
+    },
+    {
+      "name": "footer",
+      "type": "container",
+      "constraints": {
+        "horizontal": "stretch",
+        "vertical": "bottom"
+      },
+      "width": {
+        "mode": "fill-container",
+        "min": null,
+        "max": null
+      },
+      "height": {
+        "mode": "hug-contents",
+        "min": null,
+        "max": null
+      }
+    }
+  ],
+  "props": {
+    "isOpen": {
+      "type": "boolean",
+      "description": "Whether the modal is open. Default: false"
+    },
+    "onClose": {
+      "type": "Function",
+      "description": "Callback function called when modal should close"
+    },
+    "size": {
+      "type": "string",
+      "description": "Size variant: 'fullscreen' | 'item-editor' | 'medium' | 'small'. Default: 'medium'"
+    },
+    "title": {
+      "type": "string",
+      "description": "Title text displayed in header"
+    },
+    "showCloseButton": {
+      "type": "boolean",
+      "description": "Whether to show close button in header. Default: true"
+    },
+    "closeOnOverlayClick": {
+      "type": "boolean",
+      "description": "Whether clicking overlay closes modal. Default: true"
+    },
+    "closeOnEscape": {
+      "type": "boolean",
+      "description": "Whether ESC key closes modal. Default: true"
+    }
+  }
+}
+

@@ -1,0 +1,300 @@
+/* TextInput Component Styles */
+
+.text-input-wrapper {
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  
+  /* Visual */
+  width: 100%;
+}
+
+.text-input {
+  /* Layout */
+  width: 100%;
+  height: 40px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  
+  /* Visual */
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background-color: var(--field);
+  color: var(--text);
+  
+  /* Typography */
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  
+  /* Interaction */
+  transition: all 0.2s ease;
+  
+  /* Remove default styling */
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.text-input::placeholder {
+  color: var(--text-placeholder);
+}
+
+/* Size Variants - heights include padding and border */
+.text-input.size-mini {
+  height: 32px;
+  padding: 6px 12px;
+}
+
+.text-input.size-sm {
+  height: 36px;
+  padding: 7px 12px;
+}
+
+.text-input.size-md {
+  height: 40px;
+  padding: 8px 12px;
+}
+
+.text-input.size-lg {
+  height: 48px;
+  padding: 10px 12px;
+}
+
+/* States */
+.text-input:hover:not(:disabled):not(:read-only) {
+  border-color: var(--border-active);
+}
+
+.text-input:focus {
+  border-color: var(--border-active);
+  box-shadow: 0 0 0 2px var(--focus);
+}
+
+.text-input:disabled {
+  background-color: var(--surface-disabled);
+  border-color: var(--border);
+  color: var(--text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.text-input:read-only {
+  background-color: var(--surface-low);
+  cursor: default;
+}
+
+.text-input:invalid {
+  border-color: var(--danger-border);
+}
+
+.text-input:invalid:focus {
+  border-color: var(--danger-border);
+  box-shadow: 0 0 0 2px var(--danger-surface);
+}
+
+/* With Prefix/Suffix */
+.text-input-wrapper.text-input-with-prefix,
+.text-input-wrapper.text-input-with-suffix {
+  position: relative;
+}
+
+/* Default padding for prefix/suffix - accommodates micro badge (~24px width) */
+/* Note: Dynamic padding from JavaScript (via inline styles) will override this */
+.text-input-wrapper.text-input-with-prefix .text-input {
+  padding-left: 44px; /* 12px badge position + ~24px badge width + 8px gap */
+}
+
+.text-input-wrapper.text-input-with-suffix .text-input {
+  padding-right: 44px; /* 12px badge position + ~24px badge width + 8px gap */
+}
+
+/* Size-specific padding adjustments for badges */
+/* Micro badge: ~24-30px width depending on content */
+.text-input-wrapper.text-input-with-prefix:has(.badge.size-micro) .text-input {
+  padding-left: 44px; /* 12px + ~24px badge + 8px gap */
+}
+
+.text-input-wrapper.text-input-with-suffix:has(.badge.size-micro) .text-input {
+  padding-right: 44px;
+}
+
+/* MicroIcon badge: fixed 20px square */
+.text-input-wrapper.text-input-with-prefix:has(.badge.size-microIcon) .text-input {
+  padding-left: 40px; /* 12px + 20px badge + 8px gap */
+}
+
+.text-input-wrapper.text-input-with-suffix:has(.badge.size-microIcon) .text-input {
+  padding-right: 40px;
+}
+
+/* Mini badge: ~32-40px width */
+.text-input-wrapper.text-input-with-prefix:has(.badge.size-mini) .text-input {
+  padding-left: 52px; /* 12px + ~32px badge + 8px gap */
+}
+
+.text-input-wrapper.text-input-with-suffix:has(.badge.size-mini) .text-input {
+  padding-right: 52px;
+}
+
+/* Small badge: ~40-48px width */
+.text-input-wrapper.text-input-with-prefix:has(.badge.size-sm) .text-input {
+  padding-left: 60px; /* 12px + ~40px badge + 8px gap */
+}
+
+.text-input-wrapper.text-input-with-suffix:has(.badge.size-sm) .text-input {
+  padding-right: 60px;
+}
+
+/* Medium badge: ~48-56px width */
+.text-input-wrapper.text-input-with-prefix:has(.badge.size-md) .text-input {
+  padding-left: 68px; /* 12px + ~48px badge + 8px gap */
+}
+
+.text-input-wrapper.text-input-with-suffix:has(.badge.size-md) .text-input {
+  padding-right: 68px;
+}
+
+/* Large badge: ~56-64px width */
+.text-input-wrapper.text-input-with-prefix:has(.badge.size-lg) .text-input {
+  padding-left: 76px; /* 12px + ~56px badge + 8px gap */
+}
+
+.text-input-wrapper.text-input-with-suffix:has(.badge.size-lg) .text-input {
+  padding-right: 76px;
+}
+
+.text-input-prefix,
+.text-input-suffix {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  color: var(--text-subtle);
+  font-size: 14px;
+  pointer-events: none;
+  z-index: 1;
+  gap: 0;
+}
+
+.text-input-prefix {
+  left: 12px;
+}
+
+.text-input-suffix {
+  right: 12px;
+}
+
+/* Badge in prefix/suffix - ensure proper alignment and force neutral styling */
+.text-input-prefix .badge,
+.text-input-suffix .badge {
+  display: inline-flex;
+  margin: 0;
+  /* Force neutral styling when inside input */
+  background-color: var(--neutral-surface) !important;
+  color: var(--neutral-text) !important;
+  border-color: var(--neutral-border) !important;
+}
+
+/* Remove gap when badge is the only child */
+.text-input-prefix:has(.badge:only-child),
+.text-input-suffix:has(.badge:only-child) {
+  gap: 0;
+}
+
+/* With Icons */
+.text-input-wrapper.text-input-with-icon-left,
+.text-input-wrapper.text-input-with-icon-right {
+  position: relative;
+}
+
+.text-input-icon-left,
+.text-input-icon-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-subtle);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.text-input-icon-left {
+  left: 12px;
+}
+
+.text-input-icon-right {
+  right: 12px;
+}
+
+.text-input-wrapper.text-input-with-icon-left .text-input {
+  padding-left: 40px;
+}
+
+.text-input-wrapper.text-input-with-icon-right .text-input {
+  padding-right: 40px;
+}
+
+/* Combine prefix/suffix with icons - use the larger padding */
+.text-input-wrapper.text-input-with-icon-left.text-input-with-prefix .text-input {
+  padding-left: max(44px, 40px); /* Use badge padding if larger */
+}
+
+.text-input-wrapper.text-input-with-icon-right.text-input-with-suffix .text-input {
+  padding-right: max(44px, 40px); /* Use badge padding if larger */
+}
+
+/* When both icon and badge are present, use badge-specific padding */
+.text-input-wrapper.text-input-with-icon-left.text-input-with-prefix:has(.badge.size-micro) .text-input {
+  padding-left: 44px;
+}
+
+.text-input-wrapper.text-input-with-icon-left.text-input-with-prefix:has(.badge.size-microIcon) .text-input {
+  padding-left: 40px;
+}
+
+.text-input-wrapper.text-input-with-icon-left.text-input-with-prefix:has(.badge.size-mini) .text-input {
+  padding-left: 52px;
+}
+
+.text-input-wrapper.text-input-with-icon-left.text-input-with-prefix:has(.badge.size-sm) .text-input {
+  padding-left: 60px;
+}
+
+.text-input-wrapper.text-input-with-icon-left.text-input-with-prefix:has(.badge.size-md) .text-input {
+  padding-left: 68px;
+}
+
+.text-input-wrapper.text-input-with-icon-left.text-input-with-prefix:has(.badge.size-lg) .text-input {
+  padding-left: 76px;
+}
+
+.text-input-wrapper.text-input-with-icon-right.text-input-with-suffix:has(.badge.size-micro) .text-input {
+  padding-right: 44px;
+}
+
+.text-input-wrapper.text-input-with-icon-right.text-input-with-suffix:has(.badge.size-microIcon) .text-input {
+  padding-right: 40px;
+}
+
+.text-input-wrapper.text-input-with-icon-right.text-input-with-suffix:has(.badge.size-mini) .text-input {
+  padding-right: 52px;
+}
+
+.text-input-wrapper.text-input-with-icon-right.text-input-with-suffix:has(.badge.size-sm) .text-input {
+  padding-right: 60px;
+}
+
+.text-input-wrapper.text-input-with-icon-right.text-input-with-suffix:has(.badge.size-md) .text-input {
+  padding-right: 68px;
+}
+
+.text-input-wrapper.text-input-with-icon-right.text-input-with-suffix:has(.badge.size-lg) .text-input {
+  padding-right: 76px;
+}
+

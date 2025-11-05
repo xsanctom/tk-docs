@@ -1,0 +1,99 @@
+{
+  "component": "TextArea",
+  "description": "A multi-line text input with size variants and optional rows configuration.",
+  "variants": ["mini", "sm", "md", "lg"],
+  "layout": {
+    "type": "auto-layout",
+    "direction": "vertical",
+    "alignment": {
+      "self": "stretch",
+      "children": "stretch"
+    },
+    "padding": {
+      "top": 0,
+      "right": 0,
+      "bottom": 0,
+      "left": 0
+    },
+    "gap": 4
+  },
+  "constraints": {
+    "horizontal": "left",
+    "vertical": "top",
+    "width": {
+      "mode": "fill-container",
+      "min": null,
+      "max": null,
+      "value": null
+    },
+    "height": {
+      "mode": "hug-contents",
+      "min": null,
+      "max": null,
+      "value": null
+    }
+  },
+  "overflow": {
+    "horizontal": "visible",
+    "vertical": "visible",
+    "clipping": false
+  },
+  "text": {
+    "truncation": "none",
+    "whiteSpace": "pre-wrap",
+    "maxLines": null,
+    "overflowWrap": "break-word"
+  },
+  "sizes": {
+    "mini": {
+      "minHeight": 32,
+      "padding": "6px 12px",
+      "fontSize": 14,
+      "lineHeight": 1.5
+    },
+    "sm": {
+      "minHeight": 36,
+      "padding": "7px 12px",
+      "fontSize": 14,
+      "lineHeight": 1.5
+    },
+    "md": {
+      "minHeight": 40,
+      "padding": "8px 12px",
+      "fontSize": 14,
+      "lineHeight": 1.5
+    },
+    "lg": {
+      "minHeight": 48,
+      "padding": "10px 12px",
+      "fontSize": 14,
+      "lineHeight": 1.5
+    }
+  },
+  "children": [
+    {
+      "name": "textarea",
+      "type": "textarea",
+      "constraints": {
+        "horizontal": "left",
+        "vertical": "top"
+      },
+      "width": {
+        "mode": "fill-container",
+        "min": null,
+        "max": null
+      },
+      "height": {
+        "mode": "hug-contents",
+        "min": null,
+        "max": null
+      },
+      "flex": {
+        "grow": 1,
+        "shrink": 1,
+        "minWidth": 0
+      },
+      "resize": "vertical"
+    }
+  ]
+}

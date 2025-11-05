@@ -1,0 +1,121 @@
+{
+  "component": "Badge",
+  "variants": ["lg", "md", "sm", "mini", "micro", "lgIcon", "mdIcon", "smIcon", "miniIcon", "microIcon"],
+  "sentiments": ["default", "success", "info", "danger", "warning", "neutral", "purple", "orange", "memo"],
+  "layout": {
+    "type": "auto-layout",
+    "direction": "horizontal",
+    "alignment": {
+      "self": "hug-contents",
+      "children": "center"
+    },
+    "padding": {
+      "top": 6,
+      "right": 10,
+      "bottom": 6,
+      "left": 10
+    },
+    "gap": 4
+  },
+  "constraints": {
+    "horizontal": "left",
+    "vertical": "top",
+    "width": {
+      "mode": "hug-contents",
+      "min": null,
+      "max": null,
+      "value": null
+    },
+    "height": {
+      "mode": "hug-contents",
+      "min": null,
+      "max": null,
+      "value": null
+    }
+  },
+  "overflow": {
+    "horizontal": "visible",
+    "vertical": "visible",
+    "clipping": false
+  },
+  "text": {
+    "truncation": "none",
+    "whiteSpace": "nowrap",
+    "maxLines": 1,
+    "overflowWrap": "normal"
+  },
+  "sizes": {
+    "lg": {
+      "height": 48,
+      "padding": "12px 16px",
+      "fontSize": 14
+    },
+    "md": {
+      "height": 40,
+      "padding": "10px 14px",
+      "fontSize": 14
+    },
+    "sm": {
+      "height": 32,
+      "padding": "8px 12px",
+      "fontSize": 12
+    },
+    "mini": {
+      "height": 24,
+      "padding": "6px 10px",
+      "fontSize": 12
+    },
+    "micro": {
+      "height": 20,
+      "padding": "4px 6px",
+      "fontSize": 11
+    },
+    "microIcon": {
+      "height": 20,
+      "padding": "4px 4px",
+      "fontSize": 11,
+      "width": 20
+    },
+    "lgIcon": {
+      "height": 48,
+      "padding": "12px 12px",
+      "fontSize": 14,
+      "width": 48
+    },
+    "mdIcon": {
+      "height": 40,
+      "padding": "10px 10px",
+      "fontSize": 14,
+      "width": 40
+    },
+    "smIcon": {
+      "height": 32,
+      "padding": "8px 8px",
+      "fontSize": 12,
+      "width": 32
+    },
+    "miniIcon": {
+      "height": 24,
+      "padding": "6px 6px",
+      "fontSize": 12,
+      "width": 24
+    }
+  },
+  "children": [
+    {
+      "name": "badge-content",
+      "type": "text",
+      "constraints": {
+        "horizontal": "left",
+        "vertical": "center"
+      },
+      "width": {
+        "mode": "hug-contents"
+      },
+      "height": {
+        "mode": "hug-contents"
+      }
+    }
+  ]
+}
+
